@@ -1,0 +1,86 @@
+@keyframes background_flow {
+    0%{
+        background-color: black;
+    }
+
+    25%{
+        background-color: rgb(44, 38, 38);
+    }
+
+    50%{
+        background-color: rgb(80, 80, 80);
+    }
+
+    75%{
+        background-color: rgb(43, 42, 42);
+    }
+
+    100%{
+        background-color: black;
+    }
+}
+
+@keyframes grow {
+    0%{
+       font-size: 0%
+    }
+
+    100%{
+        font-size: 20rem
+    }
+}
+
+body{
+    background-color: rgb(41, 41, 41);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow:hidden;
+}
+
+article{
+     font-size: 1500%;
+     color: white;
+}
+.invisible{
+    opacity: 0;
+}
+
+.visible{
+    opacity: 1;
+}
+.growletter{
+    animation: grow 0.2s ease-in-out;
+}
+.letter{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    font-size: 20rem;
+    transform: translate(-50%, -50%);
+}
+.letters{
+    align-self: center;
+    justify-self: center;
+    width: 100vw;
+    height:97vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    letter-spacing: 3vwd;
+}
+.letters article{
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+a{  
+    position: absolute;
+    text-decoration: none;
+    font-size: 200%;
+    color: brown;
+    transition: 0.2s ease-in;
+}
+a:hover{
+    color: rgb(109, 27, 27);
+    transition: 0.2s ease-in;
+}
