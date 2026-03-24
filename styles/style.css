@@ -1,3 +1,14 @@
+@keyframes slideFade {
+    0%{
+        transform: translateY(-400%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 body{
     background-image: linear-gradient(to bottom right, black,black, rgb(255, 198, 92));
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -114,7 +125,7 @@ iframe{
     box-sizing:border-box;
     min-height: 100vh;
     padding-block: 32px;
-
+    padding-bottom: 5vh;
 
     margin-top: -8.5px;
     margin-bottom: 2vh;
@@ -132,10 +143,28 @@ iframe{
 .ow-text{
     width: 50%;
     margin-inline: auto;
+    z-index: 1;
     transform: translateY(-20%);
+    background-color: black;
 }
 .by_yassine{
     width: 20%;
     margin-inline: auto;
-    
+    z-index: 0;
+    transform: translateY(-400%);
+    animation: slideFade 1s ease-in-out 
+}
+
+.sounds{
+    margin-inline: 3vw;
+}
+.sounds iframe{
+    border-radius: 5px;
+    background-color: black;
+}
+.sounds a {
+    color: aquamarine;
+}
+.instant-link link-secondary{
+    color: blueviolet;
 }

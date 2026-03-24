@@ -2,8 +2,7 @@ const links_youtube = [
     "https://www.youtube-nocookie.com/embed/5GG9xsBAPgs",
     "https://www.youtube-nocookie.com/embed/BcXvkvxA4pw",
     "https://www.youtube-nocookie.com/embed/LlAzoaudL9w",
-    "https://www.youtube-nocookie.com/embed/pyS3vmnWTyU",
-    ""
+    "https://www.youtube-nocookie.com/embed/pyS3vmnWTyU"
 ]
 
 const Heroes = [
@@ -259,6 +258,8 @@ const Heroes = [
   }
 ]
 
+
+
 function insertHeroTable(){
     const tbody_hero = document.getElementById("heroes_table")
     for (const hero of Heroes){ 
@@ -314,3 +315,9 @@ function videoLinkBackward(){
 
 insertHeroTable()
 displayVideoLink()
+
+setTimeout(()=>{
+  const text_by_yassine = document.getElementById("by_yassine")
+console.log(text_by_yassine.style.transform)
+text_by_yassine.style.transform = "translateY(0%)"
+}, 400)
