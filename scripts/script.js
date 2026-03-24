@@ -2,13 +2,14 @@ const links_youtube = [
     "https://www.youtube-nocookie.com/embed/5GG9xsBAPgs",
     "https://www.youtube-nocookie.com/embed/BcXvkvxA4pw",
     "https://www.youtube-nocookie.com/embed/LlAzoaudL9w",
-    "https://www.youtube-nocookie.com/embed/pyS3vmnWTyU"
+    "https://www.youtube-nocookie.com/embed/pyS3vmnWTyU",
+    ""
 ]
 
 const Heroes = [
   {
     name: 'Ana',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/985b06beae46b7ba3ca87d1512d0fc62ca7f206ceca58ef16fc44d43a1cc84ed.png'
   },
   {
@@ -23,7 +24,7 @@ const Heroes = [
   },
   {
     name: 'Baptiste',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/d4e6f1ca45d9f88fa89260787397f141a6f007b14e5b26698883b6a17bab9680.png'
   },
   {
@@ -33,7 +34,7 @@ const Heroes = [
   },
   {
     name: 'Brigitte',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/795fba91376d87d441a7f359ae12a3175dfa95825ccc4414cc6b95b129fc4cb0.png'
   },
   {
@@ -88,12 +89,12 @@ const Heroes = [
   },
   {
     name: 'Illari',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/ce42d1455e03e79f321345fea84b27a8918b5db8bd7ab9b2ca9e569606ede9e4.png'
   },
   {
     name: 'Jetpack Cat',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/03a184cd0de27091e0099ac22635ad9615a8f6997881a5c25cc5f2444764f729.png'
   },
   {
@@ -108,22 +109,22 @@ const Heroes = [
   },
   {
     name: 'Juno',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/c0167d251e57b0aa2b1e16c37d87f0e7c77263db9dd0503d77b5f2589bf3e4a0.png'
   },
   {
     name: 'Kiriko',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/408603fe037e8576078eaac5eab2fb251489ced4003b11f5f522776d43d0b83d.png'
   },
   {
     name: 'Lifeweaver',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/3376515cebed0904012e67e956f6d1b9c12e03da642845eeaf787b7e4c7b339d.png'
   },
   {
     name: 'Lúcio',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/040bb13f5123ab93faad2f95627ba184608aef4b2469a4d3003859c7087df044.png'
   },
   {
@@ -138,17 +139,17 @@ const Heroes = [
   },
   {
     name: 'Mercy',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/3bfb8bd8ec827e53d870f1238ab73d8aa1f5dbfbcfaaf7f96ffcd35b5c6102ab.png'
   },
   {
     name: 'Mizuki',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/a9733c2367e0cbd70b9316fd2e1e17028653ec56d0051ea6ff098531dc4f99fc.png'
   },
   {
     name: 'Moira',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/f48f8485056d5d00dad195859188d23e50f7126b8b08b5646f46ef1b42f5e1de.png'
   },
   {
@@ -243,7 +244,7 @@ const Heroes = [
   },
   {
     name: 'Wuyang',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/4959500b495b35c0908be2abda56b53f2601b2c5cc39a1cfde8df1bffd38d66d.png'
   },
   {
@@ -253,7 +254,7 @@ const Heroes = [
   },
   {
     name: 'Zenyatta',
-    role: 'Support',
+    role: 'Soutien',
     pic: 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/7d1546b1541a8afc39353f9337a408d6275a141b0432b7e560ef61579996b0fc.png'
   }
 ]
@@ -311,7 +312,5 @@ function videoLinkBackward(){
   updateLink()
 }
 
-
 insertHeroTable()
 displayVideoLink()
-
