@@ -60,9 +60,10 @@ ul{
 }
 .roles{
     margin-inline: 30vw;
-    width: 40%;
+    width: 40vh;
     border-radius: 10px;
     border: solid white 2px;
+    justify-self: center;
 }
 .compo{
     display: flex;
