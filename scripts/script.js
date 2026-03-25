@@ -259,7 +259,6 @@ const Heroes = [
 ]
 
 
-
 function insertHeroTable(){
     const tbody_hero = document.getElementById("heroes_table")
     for (const hero of Heroes){ 
@@ -313,6 +312,10 @@ function videoLinkBackward(){
   updateLink()
 }
 
+let mousePos = [0,0]
+
+
+
 insertHeroTable()
 displayVideoLink()
 
@@ -321,3 +324,46 @@ setTimeout(()=>{
 console.log(text_by_yassine.style.transform)
 text_by_yassine.style.transform = "translateY(0%)"
 }, 400)
+
+function getRole(){
+  const image_role = document.getElementById('roles')
+const rect_role = image_role.getBoundingClientRect()
+ 
+const [tank, dps, heal] = [(rect_role.width / 3) + rect_role.x, (rect_role.width / 3 * 2) + rect_role.x, (rect_role.width / 3 * 3) + rect_role.x]
+    
+  const isInY = (rect_role.y <= mousePos[1] && mousePos[1] <= rect_role.y + rect_role.height)
+    highlightRole(null)
+    if ((rect_role.x <= mousePos[0] && mousePos[0] < tank) && isInY){
+      highlightRole("tank")
+    } 
+    if ((tank <= mousePos[0] && mousePos[0] < dps) && isInY){
+      highlightRole("dps")
+    }
+    if ((dps <= mousePos[0] && mousePos[0] < heal) && isInY){
+      highlightRole("heal")
+    }
+    
+}
+
+function highlightRole(role){
+  const tank = document.getElementById("tank")
+  const dps = document.getElementById("dps")
+  const heal = document.getElementById("heal")
+  
+  dps.classList.remove('role_hover')
+  tank.classList.remove('role_hover')
+  heal.classList.remove('role_hover')
+  console.log(role)
+  if (role == "tank"){
+      tank.classList.add('role_hover')
+  }else if (role == "dps"){
+      dps.classList.add('role_hover')
+  }else if (role == "heal"){
+      heal.classList.add('role_hover')
+  }
+}
+document.addEventListener('mousemove', function(event) {
+    mousePos = [event.clientX, event.clientY]
+    getRole()
+});
+
