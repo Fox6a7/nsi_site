@@ -376,7 +376,7 @@ ram_button.addEventListener('click', () =>{
     for (const elem of ram_row.children){
       elem.classList.add("animate_hightlight")
     }
-  },800)
+  },500)
   for (const elem of ram_row.children){
       elem.classList.remove("animate_hightlight")
     }
@@ -390,5 +390,10 @@ scrollUp.addEventListener("click", () =>{
 
 document.addEventListener("scroll" ,() =>{
   const bottom_pourcent = (window.pageYOffset* 100) /(document.documentElement.offsetHeight - window.innerHeight)
-  document.body.style.backgroundColor = `rgba(90, 68, 21, ${Math.round(bottom_pourcent) / 100})`
+  const color = [90,68,21]
+  const colorChanged = [    Math.round(color[0] * bottom_pourcent / 100),
+                            Math.round(color[1] * bottom_pourcent / 100),
+                            Math.round(color[2] * bottom_pourcent / 100)
+]
+  document.body.style.backgroundColor = `rgb(${colorChanged})`
 })
