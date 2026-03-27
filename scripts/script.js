@@ -387,3 +387,8 @@ const scrollUp = document.getElementsByClassName("goUp")[0]
 scrollUp.addEventListener("click", () =>{
   scroll({top:0, behavior:"auto"})
 })
+
+document.addEventListener("scroll" ,() =>{
+  const bottom_pourcent = (window.pageYOffset* 100) /(document.documentElement.offsetHeight - window.innerHeight)
+  document.body.style.backgroundColor = `rgba(90, 68, 21, ${Math.round(bottom_pourcent) / 100})`
+})
