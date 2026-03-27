@@ -1,3 +1,17 @@
+@keyframes hightlight {
+    0%{
+        box-shadow: -2px 2px 26px -30px #520C59;
+        border-color: #ffffff;
+    }
+    50%{
+        box-shadow: -2px 2px 26px 17px #520C59;
+        border-color: #520C59;
+    }
+    100%{
+        box-shadow: -2px 2px 26px -30px #520C59;
+        border-color: white;
+    }
+}
 @keyframes slideFade {
     0%{
         transform: translateY(-400%);
@@ -8,15 +22,14 @@
         opacity: 1;
     }
 }
-
 body{
-    background-image: linear-gradient(to bottom right, black,black, rgb(255, 198, 92));
+    /*background-image: linear-gradient(to bottom right, black,black, rgb(255, 198, 92));*/
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display:flex;
-    flex-direction: column;
     color: white;  
-
+    background-color: rgb(99, 99, 99);
     text-align: center;   
+    margin:0;
+    padding:0;
 }
 h1{
     color:white;
@@ -35,40 +48,87 @@ table{
 td{
     padding-inline: 3vw;
 }
-li strong{
-    transition: 0.2s ease-in-out;
-}
-.role_hover{
-    background-color: rgba(255,255,255,0.16);
+td img{
     border-radius: 10px;
-    box-shadow: 0px 0px 30px 13px rgba(255,255,255,0.16);
 }
 strong {
     font-size: 110%;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 iframe{
     border: 7px solid white
 }
 ul{
     text-align: start;
 }
-.case{
-
-    margin-block: 1%;
-}
-.roles{
-    margin-inline: 30vw;
-    width: 40vh;
+video{
+    width: 40vw;
+    height: auto;
+    border: solid white 5px;
     border-radius: 10px;
-    border: solid white 2px;
-    justify-self: center;
 }
-.compo{
+video:focus{
+    border: solid white 5px;
+}
+li strong{
+    transition: 0.2s ease-in-out;
+}
+footer{
+    background-color: rgb(27, 27, 27);
+    min-height: 25vh;
     display: flex;
-    justify-content : center;
-    font-size: 200%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    margin-top: 3vh;
+}
+.Présentation{
+    background-color: rgb(0, 0, 0);
+    background-position: 10%;
+    background-size:cover;
+    box-sizing:border-box;
+    min-height: 100vh;
+    padding-block: 32px;
+    padding-bottom: 5vh;
+    margin-bottom: 2vh;
+
+    border: solid 2px white;
+    -webkit-user-drag: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.ow-logo{
+    width: 20%;
+    margin-inline: auto;
+}
+.ow-text{
+    width: 50%;
+    margin-inline: auto;
+    z-index: 1;
+    transform: translateY(-20%);
+    background-color: black;
+}
+.by_yassine{
+    width: 20%;
+    margin-inline: auto;
+    z-index: 0;
+    transform: translateY(-400%);
+    animation: slideFade 1s ease-in-out;
+}
+.goty{  
+    color: white;
+    text-decoration:underline;
+    transition: 0.2s ease;
+}
+.goty:hover{  
+    color: rgb(138, 138, 138);
+    transform: scale(155);
+    transition: 0.2s ease;
+}
+.case{
+    margin-block: 1%;
 }
 .explication{
     display: flex;
@@ -77,30 +137,23 @@ ul{
     justify-content: center;
     text-wrap: nowrap;
 }
-
-.jeux{
+.compo{
     display: flex;
-    padding: 40px;
-    justify-content: space-around;
-    
-    
-    
+    justify-content : center;
+    font-size: 200%;
 }
-
-.jeux a {
-    font-size: 500%;
-    text-decoration: none;
-    color: rgb(85, 83, 83);
-    transition: 0.2s ease
+.roles{
+    width: 40vh;
+    max-width: max-content;
+    border-radius: 10px;
+    border: solid white 2px;
+    justify-self: center;
 }
-
-.jeux a:hover{
-    color: white;
-    font-size: 510%;
-    transition: 0.2s ease
+.role_hover{
+    background-color: rgba(255,255,255,0.16);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 13px rgba(255,255,255,0.16);
 }
-
-
 #id_display{
     display: flex;
     flex-direction: row;
@@ -134,53 +187,6 @@ ul{
     scale: 90%;
     transition: 0.2s ease;
 }
-.goty{  
-    color: white;
-    text-decoration:underline;
-    transition: 0.2s ease;
-}
-.goty:hover{  
-    color: rgb(138, 138, 138);
-    transform: scale(155);
-    transition: 0.2s ease;
-}
-.Présentation{
-    background-color: rgb(0, 0, 0);
-    background-position: 10%;
-    background-size:cover;
-    box-sizing:border-box;
-    min-height: 100vh;
-    padding-block: 32px;
-    padding-bottom: 5vh;
-
-    margin-top: -8.5px;
-    margin-bottom: 2vh;
-
-    border: solid 2px white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.ow-logo{
-    width: 20%;
-    margin-inline: auto;
-}
-.ow-text{
-    width: 50%;
-    margin-inline: auto;
-    z-index: 1;
-    transform: translateY(-20%);
-    background-color: black;
-}
-.by_yassine{
-    width: 20%;
-    margin-inline: auto;
-    z-index: 0;
-    transform: translateY(-400%);
-    animation: slideFade 1s ease-in-out 
-}
-
 .sounds{
     margin-inline: 3vw;
 }
@@ -188,9 +194,50 @@ ul{
     border-radius: 5px;
     background-color: black;
 }
-.sounds a {
-    color: aquamarine;
+#ram_scroll{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 150%;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.1s ease-in;
 }
-.instant-link link-secondary{
-    color: blueviolet;
+#ram_scroll:hover{
+    color: rgb(235, 183, 255);
+    transition: 0.2s ease-in
+}
+.animate_hightlight{
+    animation: hightlight 2.5s ease-in-out
+}
+.footer_left{
+    background-color: aqua;
+}
+.footer_middle{
+    width: auto;
+    background-color: rgb(10, 126, 126);
+    
+}
+.footer_right{
+    background-color: rgb(20, 49, 49);
+}
+.goUp{
+    justify-content: end;
+    background-color: rgb(167, 167, 167);
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.2s ease-in-out;
+}
+.goUp img{
+    width: 3vw;
+    transition: 0.2s ease-in-out;
+}
+
+.goUp:hover{
+    background-color: rgb(92, 92, 92);
+    border: solid rgb(167, 167, 167) 3px;
+    transition: 0.2s ease-in-out;
+}
+.goUp:hover img{
+    transform: translateY(-5px);
+    transition: 0.2s ease-in-out;
 }

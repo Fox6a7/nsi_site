@@ -258,6 +258,7 @@ const Heroes = [
   }
 ]
 
+let mousePos = [0,0]
 
 function insertHeroTable(){
     const tbody_hero = document.getElementById("heroes_table")
@@ -276,6 +277,8 @@ function insertHeroTable(){
         const cell1 = row.insertCell(0)
         const cell2 = row.insertCell(1)
         const cell3 = row.insertCell(2)
+
+        row.classList.add(td_name.replace(" ",""))
 
         cell1.append(td_pic)
         cell2.append(td_name)
@@ -311,25 +314,11 @@ function videoLinkBackward(){
   video_section.children[1].src = links_youtube[curr_index-1 == -1 ? links_youtube.length - 1 : curr_index-1]
   updateLink()
 }
-
-let mousePos = [0,0]
-
-
-
-insertHeroTable()
-displayVideoLink()
-
-setTimeout(()=>{
-  const text_by_yassine = document.getElementById("by_yassine")
-console.log(text_by_yassine.style.transform)
-text_by_yassine.style.transform = "translateY(0%)"
-}, 400)
-
 function getRole(){
   const image_role = document.getElementById('roles')
-const rect_role = image_role.getBoundingClientRect()
+  const rect_role = image_role.getBoundingClientRect()
  
-const [tank, dps, heal] = [(rect_role.width / 3) + rect_role.x, (rect_role.width / 3 * 2) + rect_role.x, (rect_role.width / 3 * 3) + rect_role.x]
+  const [tank, dps, heal] = [(rect_role.width / 3) + rect_role.x, (rect_role.width / 3 * 2) + rect_role.x, (rect_role.width / 3 * 3) + rect_role.x]
     
   const isInY = (rect_role.y <= mousePos[1] && mousePos[1] <= rect_role.y + rect_role.height)
     highlightRole(null)
@@ -344,7 +333,6 @@ const [tank, dps, heal] = [(rect_role.width / 3) + rect_role.x, (rect_role.width
     }
     
 }
-
 function highlightRole(role){
   const tank = document.getElementById("tank")
   const dps = document.getElementById("dps")
@@ -353,7 +341,6 @@ function highlightRole(role){
   dps.classList.remove('role_hover')
   tank.classList.remove('role_hover')
   heal.classList.remove('role_hover')
-  console.log(role)
   if (role == "tank"){
       tank.classList.add('role_hover')
   }else if (role == "dps"){
@@ -362,8 +349,41 @@ function highlightRole(role){
       heal.classList.add('role_hover')
   }
 }
+
+
+
+
+insertHeroTable()
+displayVideoLink()
+
+setTimeout(()=>{
+  const text_by_yassine = document.getElementById("by_yassine")
+  text_by_yassine.style.transform = "translateY(0%)"
+}, 400)
+
+
 document.addEventListener('mousemove', function(event) {
     mousePos = [event.clientX, event.clientY]
     getRole()
 });
 
+const ram_button = document.getElementById('ram_scroll')
+ram_button.addEventListener('click', () =>{
+  const ram_row = document.getElementsByClassName('Ramattra')[0]
+  ram_row.scrollIntoView({behavior: "smooth", block: "center"})
+
+  setTimeout(()=>{
+    for (const elem of ram_row.children){
+      elem.classList.add("animate_hightlight")
+    }
+  },800)
+  for (const elem of ram_row.children){
+      elem.classList.remove("animate_hightlight")
+    }
+})
+
+
+const scrollUp = document.getElementsByClassName("goUp")[0]
+scrollUp.addEventListener("click", () =>{
+  scroll({top:0, behavior:"auto"})
+})
