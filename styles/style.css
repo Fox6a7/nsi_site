@@ -44,7 +44,6 @@
     }
 }
 body{
-    /*background-image: linear-gradient(to bottom right, black,black, rgb(255, 198, 92));*/
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;  
     /*animation: background_flow 10s infinite;*/
