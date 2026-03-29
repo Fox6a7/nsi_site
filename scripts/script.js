@@ -407,8 +407,8 @@ scrollUp.addEventListener("click", () =>{
 
 document.addEventListener("scroll" ,() =>{
   const bottom_pourcent = (window.pageYOffset* 100) /(document.documentElement.offsetHeight - window.innerHeight)
-  const color = [202, 57, 0]
-  // rgb(202, 57, 0)
+  const color = [121, 99, 68]
+  // rgb(121, 99, 68)
   const colorChanged = [    Math.round(color[0] * bottom_pourcent / 100),
                             Math.round(color[1] * bottom_pourcent / 100),
                             Math.round(color[2] * bottom_pourcent / 100)
