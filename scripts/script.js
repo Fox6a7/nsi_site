@@ -367,22 +367,39 @@ document.addEventListener('mousemove', function(event) {
     getRole()
 });
 
-const ram_button = document.getElementById('ram_scroll')
-ram_button.addEventListener('click', () =>{
-  const ram_row = document.getElementsByClassName('Ramattra')[0]
-  ram_row.scrollIntoView({behavior: "smooth", block: "center"})
 
-  setTimeout(()=>{
+function animateClickHero(){
+  const hero_button = document.getElementsByClassName('hero_scroll')[0]
+  hero_button.addEventListener('click', () =>{
+    if (hero_button.id == "genji_scroll"){
+      const genji_row = document.getElementsByClassName('Genji')[0]
+      genji_row.scrollIntoView({behavior: "smooth", block: "center"})
+
+      setTimeout(()=>{
+        for (const elem of genji_row.children){
+          elem.classList.add("animate_hightlight_genji")
+        }
+      },500)
+      for (const elem of genji_row.children){
+          elem.classList.remove("animate_hightlight_genji")
+        }
+    }else if (hero_button.id == "ram_scroll"){
+      const ram_row = document.getElementsByClassName('Ramattra')[0]
+    ram_row.scrollIntoView({behavior: "smooth", block: "center"})
+
+    setTimeout(()=>{
+      for (const elem of ram_row.children){
+        elem.classList.add("animate_hightlight_ram")
+      }
+    },500)
     for (const elem of ram_row.children){
-      elem.classList.add("animate_hightlight")
+        elem.classList.remove("animate_hightlight_ram")
+      }
     }
-  },500)
-  for (const elem of ram_row.children){
-      elem.classList.remove("animate_hightlight")
-    }
-})
+  })
+}
 
-
+animateClickHero()
 const scrollUp = document.getElementsByClassName("goUp")[0]
 scrollUp.addEventListener("click", () =>{
   scroll({top:0, behavior:"auto"})
@@ -390,10 +407,25 @@ scrollUp.addEventListener("click", () =>{
 
 document.addEventListener("scroll" ,() =>{
   const bottom_pourcent = (window.pageYOffset* 100) /(document.documentElement.offsetHeight - window.innerHeight)
-  const color = [90,68,21]
+  const color = [202, 57, 0]
+  // rgb(202, 57, 0)
   const colorChanged = [    Math.round(color[0] * bottom_pourcent / 100),
                             Math.round(color[1] * bottom_pourcent / 100),
                             Math.round(color[2] * bottom_pourcent / 100)
 ]
   document.body.style.backgroundColor = `rgb(${colorChanged})`
+})
+
+
+const video_frame = document.getElementById('potg')
+
+video_frame.addEventListener('ended', () =>{
+  let currentIndex = parseInt(video_frame.src[video_frame.src.indexOf("potg") - 1])
+  const IndexMax = 1
+  video_frame.src = `./videos/${currentIndex+1 > IndexMax ? 0 : currentIndex +1}potg.mp4`
+
+  const text_potg = document.getElementById('potg_text')
+  text_potg.innerHTML = currentIndex == 0 ? '<strong>Ceci est l\'un des potg d\'un ami avec <strong class="hero_scroll" id="genji_scroll">Genji</strong></strong>' : '<p id="potg_text"><strong>Ceci est l\'un de mes potg avec <strong  class="hero_scroll" id="ram_scroll">Rammatra</strong></strong></p>'
+  
+  animateClickHero()
 })
