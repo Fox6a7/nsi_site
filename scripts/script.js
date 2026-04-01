@@ -1,8 +1,8 @@
 const links_youtube = [
-    "https://www.youtube-nocookie.com/embed/5GG9xsBAPgs",
-    "https://www.youtube-nocookie.com/embed/BcXvkvxA4pw",
-    "https://www.youtube-nocookie.com/embed/LlAzoaudL9w",
-    "https://www.youtube-nocookie.com/embed/pyS3vmnWTyU"
+  "https://img.youtube.com/vi/5GG9xsBAPgs/maxresdefault.jpg",
+  "https://img.youtube.com/vi/BcXvkvxA4pw/maxresdefault.jpg",
+  "https://img.youtube.com/vi/LlAzoaudL9w/maxresdefault.jpg",
+  "https://img.youtube.com/vi/pyS3vmnWTyU/maxresdefault.jpg"
 ]
 
 const Heroes = [
@@ -293,13 +293,29 @@ function displayVideoLink(){
   const video_section = document.getElementById("id_display")
   video_section.children[1].src = links_youtube[0]
   video_section.children[1].referrerpolicy="strict-origin-when-cross-origin"
+  
+  const frontground_black = document.createElement("span")
+  frontground_black.style.backgroundColor = "rgb(234, 8, 8)"
+  frontground_black.style.position = "absolute"
+  const rect_frame = video_section.getBoundingClientRect()
+  
+  frontground_black.style.width = rect_frame.width
+  frontground_black.style.height = rect_frame.height
+  frontground_black.style.top = rect_frame.top
+  frontground_black.style.right = rect_frame.right
+  frontground_black.style.bottom = rect_frame.bottom
+  frontground_black.style.x = rect_frame.x
+  frontground_black.style.y = rect_frame.y
+  frontground_black.style.zIndex = "10"
+  console.log(frontground_black.getBoundingClientRect())
+  document.body.append(frontground_black)
   updateLink()
 }
 function updateLink(){
   const a = document.getElementById("link_video")
   const video_section = document.getElementById("id_display")
-  a.href = video_section.children[1].src.replace("youtube-nocookie.com/embed/","youtube.com/watch?v=")
-  a.textContent = video_section.children[1].src.replace("youtube-nocookie.com/embed/","youtube.com/watch?v=")
+  a.href = video_section.children[1].src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
+  a.textContent = video_section.children[1].src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
 }
 function videoLinkForward(){
   const video_section = document.getElementById("id_display")
@@ -367,6 +383,11 @@ document.addEventListener('mousemove', function(event) {
     getRole()
 });
 
+const iframe_video = document.getElementById('trailer_frame')
+iframe_video.addEventListener("mousedown", () => {
+  const link = iframe_video.src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
+  open(link, "_blank")
+})
 
 function animateClickHero(){
   const hero_button = document.getElementsByClassName('hero_scroll')[0]
