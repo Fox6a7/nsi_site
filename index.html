@@ -62,7 +62,8 @@
         <h1 style="margin-top: 4vh;">Trailers:</h1>
         <section id="id_display">
             <article class="left_video" onclick=videoLinkBackward()>←</article>
-            <iframe width="744" height="419" src="" frameborder="0" id="trailer_frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <img width="744" height="419" src="" frameborder="0" id="trailer_frame">
+                <img id="play_youtube" src="./images/youtube.png" alt="youtube_play.png">            
             <article class="right_video"  onclick=videoLinkForward()>→</article>
         </section>
         <em>Lien: <a id="link_video" href="" target="_blank"></a></em>
@@ -91,6 +92,7 @@
             <p><strong>Le Play Of The Game</strong> (<em>Action de la partie</em>) est le meilleur temps fort d'une partie.<br> Elle est affichée à la fin de la partie avec une petite intro qui introduit le joueur et son héro</p>
             <video width="300" height="300" controls src="./videos/0potg.mp4" type="video/mp4" id="potg" ></video>
             <p id="potg_text"><strong>Ceci est l'un de mes potg avec <strong  class="hero_scroll" id="ram_scroll">Rammatra</strong></strong></p>
+            <p>(Pour afficher l'autre POTG il faut finir le POTG actuelle)</p>
         </section>
     </section>
 

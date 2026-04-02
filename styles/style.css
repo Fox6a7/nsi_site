@@ -66,6 +66,12 @@ td{
 }
 td img{
     border-radius: 10px;
+    border: solid white 1px;
+    transition: 0.2s ease
+}
+td img:hover{
+    border: solid rgb(247, 153, 13) 1px;
+    transition: 0.2s ease
 }
 strong {
     font-size: 110%;
@@ -175,17 +181,33 @@ footer a , footer li{
 }
 #id_display{
     display: flex;
+    position: relative;
     flex-direction: row;
     margin-block: 2vh;
     gap:2vw;
     justify-content: center;
 }
-#id_display iframe{
-    display: flex;
+#trailer_frame{
+    position: relative;
     justify-items: center;
     user-select: none;
     cursor: url('../cursors/pointer.png') 5 5, auto;
+    border: solid white 5px 
 }
+#play_youtube{
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: calc(210px - (200px / 2));
+}
+#id_display img:hover{
+    filter: brightness(50%);
+    transition: 0.2s ease
+}
+#id_display img{
+    transition: 0.2s ease-in-out
+}
+
 #id_display article {
     justify-content: center;
     align-self: center;

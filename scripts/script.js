@@ -1,8 +1,8 @@
 const links_youtube = [
-  "https://img.youtube.com/vi/5GG9xsBAPgs/maxresdefault.jpg",
-  "https://img.youtube.com/vi/BcXvkvxA4pw/maxresdefault.jpg",
-  "https://img.youtube.com/vi/LlAzoaudL9w/maxresdefault.jpg",
-  "https://img.youtube.com/vi/pyS3vmnWTyU/maxresdefault.jpg"
+  "./images/5GG9xsBAPgs.jpg",
+  "./images/BcXvkvxA4pw.jpg",
+  "./images/LlAzoaudL9w.jpg",
+  "./images/pyS3vmnWTyU.jpg"
 ]
 
 const Heroes = [
@@ -292,41 +292,26 @@ function insertHeroTable(){
 function displayVideoLink(){
   const video_section = document.getElementById("id_display")
   video_section.children[1].src = links_youtube[0]
-  video_section.children[1].referrerpolicy="strict-origin-when-cross-origin"
-  
-  const frontground_black = document.createElement("span")
-  frontground_black.style.backgroundColor = "rgb(234, 8, 8)"
-  frontground_black.style.position = "absolute"
-  const rect_frame = video_section.getBoundingClientRect()
-  
-  frontground_black.style.width = rect_frame.width
-  frontground_black.style.height = rect_frame.height
-  frontground_black.style.top = rect_frame.top
-  frontground_black.style.right = rect_frame.right
-  frontground_black.style.bottom = rect_frame.bottom
-  frontground_black.style.x = rect_frame.x
-  frontground_black.style.y = rect_frame.y
-  frontground_black.style.zIndex = "10"
-  console.log(frontground_black.getBoundingClientRect())
-  document.body.append(frontground_black)
+
   updateLink()
 }
 function updateLink(){
   const a = document.getElementById("link_video")
   const video_section = document.getElementById("id_display")
-  a.href = video_section.children[1].src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
-  a.textContent = video_section.children[1].src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
+  a.href ="https://www.youtube.com/watch?v="+ video_section.children[1].src.replace(".jpg","").slice(video_section.children[1].src.indexOf("images/")+7)
+  a.textContent = "https://www.youtube.com/watch?v=" + video_section.children[1].src.replace(".jpg","") .slice(video_section.children[1].src.indexOf("images/")+7)
 }
 function videoLinkForward(){
   const video_section = document.getElementById("id_display")
-  const curr_index = links_youtube.indexOf(video_section.children[1].src)
+  
+  const curr_index = links_youtube.indexOf("./images/"+video_section.children[1].src.slice(video_section.children[1].src.indexOf("images/")+7))
   video_section.children[1].src = links_youtube[curr_index+1 == links_youtube.length ? 0 : curr_index+1]
   updateLink()
 
 }
 function videoLinkBackward(){
   const video_section = document.getElementById("id_display")
-  const curr_index = links_youtube.indexOf(video_section.children[1].src)
+  const curr_index = links_youtube.indexOf("./images/"+video_section.children[1].src.slice(video_section.children[1].src.indexOf("images/")+7))
   video_section.children[1].src = links_youtube[curr_index-1 == -1 ? links_youtube.length - 1 : curr_index-1]
   updateLink()
 }
@@ -366,9 +351,6 @@ function highlightRole(role){
   }
 }
 
-
-
-
 insertHeroTable()
 displayVideoLink()
 
@@ -383,11 +365,17 @@ document.addEventListener('mousemove', function(event) {
     getRole()
 });
 
-const iframe_video = document.getElementById('trailer_frame')
-iframe_video.addEventListener("mousedown", () => {
-  const link = iframe_video.src.replace("img.youtube.com/vi/","youtube.com/watch?v=").replace("maxresdefault.jpg","")
-  open(link, "_blank")
-})
+const iframe_video = document.getElementById('id_display')
+
+for (const imgs of iframe_video.children){
+  console.log(imgs.tagName)
+  if (imgs.tagName != "IMG") continue
+  imgs.addEventListener("mousedown", () => {
+    let source = document.getElementById('trailer_frame').src
+    const link = "https://www.youtube.com/watch?v="+ source.replace(".jpg","").slice(source.indexOf("images/")+7)
+    open(link, "_blank")
+  })
+}
 
 function animateClickHero(){
   const hero_button = document.getElementsByClassName('hero_scroll')[0]
