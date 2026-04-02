@@ -5,20 +5,39 @@ let timeout_fade;
 
 const MAX = 4
 
+const text_consigne = document.getElementsByClassName("text_consigne")[0]
+
+let timeout_consigne = setTimeout(reAppearConsigne, 4000)
+
 document.addEventListener("keydown" ,(key) => {
+    reDisappearConsigne()
     if (array_letters.length == MAX) return
     array_letters.push(key.key)
     var audio = new Audio(`sounds/${array_letters.length}hit.mp3`)
     audio.play()
     displayLetter(key.key.toUpperCase())
     clearTimeout(timeout)
+    clearTimeout(timeout_consigne)
     if (array_letters.length > MAX){
         lettersFull()
     }else{  
         timeout = setTimeout(lettersFull, array_letters.length == MAX ? 500 : 1500)
+        timeout_consigne = setTimeout(reAppearConsigne, 2500)
     }
 
 })
+
+function reAppearConsigne(){
+    text_consigne.style.transition = "0.2s ease"
+    text_consigne.classList.add("visible")
+    text_consigne.classList.remove("invisible")
+    text_consigne.style.transition = ""
+}
+function reDisappearConsigne(){
+    text_consigne.style.transition = "0s"
+    text_consigne.classList.remove("visible")
+    text_consigne.classList.add("invisible")
+}
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
