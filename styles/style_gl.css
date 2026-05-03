@@ -87,7 +87,7 @@ article{
     justify-content: center;
     text-align: center;
 }
-footer {
+footer{
     background-color: rgb(27, 27, 27);
     min-height: 25vh;
     display: flex;
@@ -98,18 +98,15 @@ footer {
     margin-top: 3vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-footer a,
-footer li {
-    cursor: url('../cursors/pointer.png') 5 5, auto;
+footer a , footer li{
+    cursor: url('../cursors/pointer.png') 5 5, auto
 }
-.footer_left {
-    justify-content: start;
+.footer_left{
+    justify-content: end;
     width: 33vw;
     height: max-content;
     font-size: 200%;
 }
-
 .footer_middle {
     justify-content: center;
     width: 33vw;
@@ -119,18 +116,15 @@ footer li {
     border-radius: 10px;
     padding-inline: 2vw;
 }
-
 .footer_right {
     justify-content: end;
     width: 33vw;
-    height: 100%;
+    height: 30vw;
     display: flex;
 
 }
-
 .goUp{
-    justify-self: flex-end;
-    align-self: center;
+    justify-self: right;
     background-color: rgb(167, 167, 167);
     border: solid white 3px;
     border-radius: 10px;
@@ -140,6 +134,7 @@ footer li {
     transition: 0.2s ease-in-out;
     margin-right: 2vw;
     text-align: center;
+    align-self: center;
 
 }
 .goUp img{
@@ -156,7 +151,6 @@ footer li {
     transform: translateY(-5px);
     transition: 0.2s ease-in-out;
 }
-
 .jeu {
     padding: 2%;
     display: flex;
@@ -175,7 +169,7 @@ footer li {
 }
 .jeu img {
     height: 40px;
-    width: auto;
+    width: 40px;
     padding: 30px;
     transition: 0.3s ease;
     border-radius: 10%;    
@@ -187,13 +181,12 @@ footer li {
     transform:translateY(10);
     transition: 0.2s ease-out
 }
-
-.footer_left a {
+.footer_left a {    
     text-decoration: none;
     color: white;
     transition: 0.2s ease-in-out;
+    justify-self: flex-end;
 }
-
 .footer_left a:hover {
     color: rgb(70, 70, 70);
     transition: 0.2s ease-in-out;

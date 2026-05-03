@@ -386,7 +386,7 @@ footer li {
 }
 .jeu img {
     height: 40px;
-    width: auto;
+    width: 40px;
     padding: 30px;
     transition: 0.3s ease;
     border-radius: 10%;    
