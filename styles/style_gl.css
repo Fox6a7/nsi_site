@@ -168,6 +168,7 @@ footer a , footer li{
     text-align: center;
 }
 .jeu img {
+    margin-inline: auto;
     height: 40px;
     width: 40px;
     padding: 30px;

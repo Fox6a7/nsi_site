@@ -78,6 +78,7 @@ footer a , footer li{
 .footer_middle {
     justify-content: center;
     width: 33vw;
+    text-align: center;
     height: 200%;
     display: flex;
     background-color: rgb(114, 110, 86);
@@ -136,6 +137,7 @@ footer a , footer li{
     text-align: center;
 }
 .jeu img {
+    margin-inline: auto;
     height: 40px;
     width: 40px;
     padding: 30px;
