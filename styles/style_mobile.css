@@ -6,27 +6,17 @@ body{
     margin: 0;
     padding: 0;
 }
-.retour{
-    position: sticky;
-    left: 1vw;
-    top: 1vw;
-    padding-inline: 1vw;
-    color: rgb(255, 255, 255);
-    font-size: 400%;
-    text-decoration: none;
-    background-color: rgb(0, 0, 0);
-    border: solid white 6px;
-    border-radius: 30px;
-    transition: 0.2s ease;
-}
 
 h1{
-    justify-self: center;
-    font-size: 500%;
+    width: fit-content;
+    margin-inline: auto;
+    font-size: 210%;
+    
 }
 p{
     justify-self: center;
-    font-size: 200%;
+    color: rgb(220, 220, 220);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
     text-align: center;
 }
 video{
@@ -49,7 +39,7 @@ footer a , footer li{
     cursor: url('../cursors/pointer.png') 5 5, auto
 }
 .footer_left{
-    justify-content: start;
+    justify-content: end;
     width: 33vw;
     height: max-content;
     font-size: 200%;
@@ -61,14 +51,17 @@ footer a , footer li{
     display: flex;
     background-color: rgb(114, 110, 86);
     border-radius: 10px;
+    padding-inline: 2vw;
 }
-.footer_right{
-    justify-content: flex-end;
+.footer_right {
+    justify-content: end;
     width: 33vw;
-    height: 200%;
+    height: max-content;
+    display: flex;
+
 }
 .goUp{
-    justify-self: flex-end;
+    justify-self: right;
     background-color: rgb(167, 167, 167);
     border: solid white 3px;
     border-radius: 10px;
@@ -107,12 +100,11 @@ footer a , footer li{
 }
 .jeu p {
     cursor: url('../cursors/pointer.png') 5 5, auto;
-    font-size: 100%;
+    font-size: 1rem;
 }
 .jeu img {
-    height: 2vw;
-    width: 2vw;
-    margin-inline: auto;
+    height: 40px;
+    width: auto;
     padding: 30px;
     transition: 0.3s ease;
     border-radius: 10%;    
@@ -124,10 +116,11 @@ footer a , footer li{
     transform:translateY(10);
     transition: 0.2s ease-out
 }
-.footer_left a {
+.footer_left a {    
     text-decoration: none;
     color: white;
     transition: 0.2s ease-in-out;
+    justify-self: flex-end;
 }
 .footer_left a:hover {
     color: rgb(70, 70, 70);

@@ -331,6 +331,7 @@ footer li {
     display: flex;
     background-color: rgb(114, 110, 86);
     border-radius: 10px;
+    padding-inline: 2vw;
 }
 
 .footer_right {
@@ -381,9 +382,10 @@ footer li {
 }
 .jeu p {
     cursor: url('../cursors/pointer.png') 5 5, auto;
+    font-size: 1rem;
 }
 .jeu img {
-    height: 2vw;
+    height: 40px;
     width: auto;
     padding: 30px;
     transition: 0.3s ease;

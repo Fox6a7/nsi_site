@@ -21,11 +21,13 @@ body{
 }
 
 h1{
-    justify-self: center;
+    width: fit-content;
+    margin-inline: auto;
     font-size: 500%;
 }
 h2{
-    justify-self: center;
+    width: fit-content;
+    margin-inline: auto;
     font-size: 500%;
 }
 table tbody iframe {
@@ -79,12 +81,15 @@ footer a , footer li{
     height: 200%;
     display: flex;
     background-color: rgb(114, 110, 86);
+    padding-inline: 2vw;
     border-radius: 10px;
 }
-.footer_right{
-    justify-content: flex-end;
+.footer_right {
+    justify-content: end;
     width: 33vw;
-    height: 200%;
+    height: max-content;
+    display: flex;
+
 }
 .goUp{
     justify-self: flex-end;
@@ -127,11 +132,12 @@ footer a , footer li{
 }
 .jeu p {
     cursor: url('../cursors/pointer.png') 5 5, auto;
+    font-size: 1rem;
+    text-align: center;
 }
 .jeu img {
-    height: 2vw;
-    margin-inline: auto;
-    width: 2vw;
+    height: 40px;
+    width: auto;
     padding: 30px;
     transition: 0.3s ease;
     border-radius: 10%;    
