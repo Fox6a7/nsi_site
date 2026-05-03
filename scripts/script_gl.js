@@ -9,13 +9,14 @@ const text_consigne = document.getElementsByClassName("text_consigne")[0]
 
 let timeout_consigne = setTimeout(reAppearConsigne, 4000)
 
-document.addEventListener("keydown" ,(key) => {
+document.addEventListener("keydown" ,(KeyEvent) => {
+    if (KeyEvent.key.length > 1) return
     reDisappearConsigne()
     if (array_letters.length == MAX) return
-    array_letters.push(key.key)
+    array_letters.push(KeyEvent.key)
     var audio = new Audio(`sounds/${array_letters.length}hit.mp3`)
     audio.play()
-    displayLetter(key.key.toUpperCase())
+    displayLetter(KeyEvent.key.toUpperCase())
     clearTimeout(timeout)
     clearTimeout(timeout_consigne)
     if (array_letters.length > MAX){

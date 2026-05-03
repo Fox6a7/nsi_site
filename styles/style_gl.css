@@ -1,4 +1,3 @@
-
 @keyframes grow {
     0%{
        font-size: 0%
@@ -32,8 +31,10 @@
 
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    overflow:hidden;
+   overflow-x: hidden;
     background-color: rgb(46, 46, 46);
+    margin: 0;
+    padding:0;
 }
 
 article{
@@ -86,14 +87,113 @@ article{
     justify-content: center;
     text-align: center;
 }
-a{  
-    position: absolute;
+footer {
+    background-color: rgb(27, 27, 27);
+    min-height: 25vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1vw;
+    margin-top: 3vh;
+}
+
+footer a,
+footer li {
+    cursor: url('../cursors/pointer.png') 5 5, auto;
+}
+.footer_left {
+    justify-content: start;
+    width: 33vw;
+    height: max-content;
+    font-size: 200%;
+}
+
+.footer_middle {
+    justify-content: center;
+    width: 33vw;
+    height: 200%;
+    display: flex;
+    background-color: rgb(114, 110, 86);
+    border-radius: 10px;
+}
+
+.footer_right {
+    justify-content: end;
+    width: 33vw;
+    height: max-content;
+    display: flex;
+
+}
+
+.goUp {
+    justify-content: end;
+    align-content: center;
+    background-color: rgb(167, 167, 167);
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 10vh;
+    height: 10vh;
+    transition: 0.2s ease-in-out;
+    margin-right: 2vw;
+}
+
+.goUp img {
+    width: 3vw;
+    transition: 0.2s ease-in-out;
+}
+
+.goUp:hover {
+    background-color: rgb(92, 92, 92);
+    border: solid rgb(167, 167, 167) 3px;
+    transition: 0.2s ease-in-out;
+}
+
+.goUp:hover img {
+    transform: translateY(-5px);
+    transition: 0.2s ease-in-out;
+}
+
+.jeu {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    padding-top: -0px;
+    color: white;
+    user-select: none;
     text-decoration: none;
     font-size: 200%;
-    color: brown;
-    transition: 0.2s ease-in;
+    transition: 0.5s ease-in-out;
 }
-a:hover{
-    color: rgb(109, 27, 27);
-    transition: 0.2s ease-in;
+.jeu p {
+    cursor: url('../cursors/pointer.png') 5 5, auto;
+    text-align: center;
+    font-size: 100%;
+}
+.jeu img {
+    height: 2vw;
+    margin-inline: auto;
+    width: 2vw;
+    padding: 30px;
+    transition: 0.3s ease;
+    border-radius: 10%;    
+}
+.jeu.selected{
+    background-color: rgb(27,27,27);
+    border-radius: 10px;
+    border: solid white 2px;
+    transform:translateY(10);
+    transition: 0.2s ease-out
+}
+
+.footer_left a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.footer_left a:hover {
+    color: rgb(70, 70, 70);
+    transition: 0.2s ease-in-out;
 }

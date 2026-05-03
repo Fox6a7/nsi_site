@@ -1,101 +1,128 @@
 @keyframes hightlight_ram {
-    0%{
+    0% {
         box-shadow: -2px 2px 26px -30px #520C59;
         border-color: #ffffff;
     }
-    50%{
+
+    50% {
         box-shadow: -2px 2px 26px 17px #520C59;
         border-color: #520C59;
     }
-    100%{
+
+    100% {
         box-shadow: -2px 2px 26px -30px #520C59;
         border-color: white;
     }
 }
+
 @keyframes hightlight_genji {
-    0%{
+    0% {
         box-shadow: -2px 2px 26px -30px #0c5910;
         border-color: #ffffff;
     }
-    50%{
+
+    50% {
         box-shadow: -2px 2px 26px 17px #0c5910;
         border-color: #0c5910;
     }
-    100%{
+
+    100% {
         box-shadow: -2px 2px 26px -30px #0c5910;
         border-color: white;
     }
 }
+
 @keyframes slideFade {
-    0%{
+    0% {
         transform: translateY(-400%);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
 }
-body{
+
+body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;  
-    text-align: center;   
-    margin:0;
-    padding:0;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
     cursor: url('../cursors/pointer.png') 5 5, auto;
 }
-p a, p, p strong, em, li {
+
+p a,
+p,
+p strong,
+em,
+li {
     cursor: url('../cursors/text.png') 15 15, text;
 }
-h1{
-    color:white;
+
+h1 {
+    color: white;
     font-size: 5rem;
     margin-inline: auto;
 }
 
-table , td, th{
+table,
+td,
+th {
     border: solid 5px white;
     font-size: 150%;
-    
+
 }
-table{
+
+table {
     margin-inline: auto;
 }
-td{
+
+td {
     padding-inline: 3vw;
 }
-td img{
+
+td img {
     border-radius: 10px;
     border: solid white 1px;
     transition: 0.2s ease
 }
-td img:hover{
+
+td img:hover {
     border: solid rgb(247, 153, 13) 1px;
     transition: 0.2s ease
 }
+
 strong {
     font-size: 110%;
     font-family: Arial, Helvetica, sans-serif;
 }
-iframe{
+
+iframe {
     border: 7px solid white
 }
-ul{
+
+ul {
     text-align: start;
 }
-video{
+
+video {
     width: 40vw;
     height: auto;
     border: solid white 5px;
     border-radius: 10px;
 }
-video:focus{
+
+video:focus {
     border: solid white 5px;
 }
-li strong{
+
+li strong {
     transition: 0.2s ease-in-out;
 }
-footer{
+
+footer {
     background-color: rgb(27, 27, 27);
     min-height: 25vh;
     display: flex;
@@ -105,14 +132,17 @@ footer{
     padding-block: 1vw;
     margin-top: 3vh;
 }
-footer a , footer li{
+
+footer a,
+footer li {
     cursor: url('../cursors/pointer.png') 5 5, auto;
 }
-.Présentation{
+
+.Présentation {
     background-color: rgb(0, 0, 0);
     background-position: 10%;
-    background-size:cover;
-    box-sizing:border-box;
+    background-size: cover;
+    box-sizing: border-box;
     min-height: 100vh;
     padding-block: 32px;
     padding-bottom: 5vh;
@@ -124,87 +154,102 @@ footer a , footer li{
     flex-direction: column;
     justify-content: space-around;
 }
-.ow-logo{
+
+.ow-logo {
     width: 20%;
     margin-inline: auto;
 }
-.ow-text{
+
+.ow-text {
     width: 50%;
     margin-inline: auto;
     z-index: 1;
     transform: translateY(-20%);
     background-color: black;
 }
-.by_yassine{
+
+.by_yassine {
     width: 20%;
     margin-inline: auto;
     z-index: 0;
     transform: translateY(-400%);
     animation: slideFade 1s ease-in-out;
 }
-.goty{  
+
+.goty {
     color: white;
-    text-decoration:underline;
+    text-decoration: underline;
     transition: 0.2s ease;
 }
-.goty:hover{  
+
+.goty:hover {
     color: rgb(138, 138, 138);
     transform: scale(155);
     transition: 0.2s ease;
 }
-.case{
+
+.case {
     margin-block: 1%;
 }
-.explication{
+
+.explication {
     display: flex;
     font-size: 3vw;
-    color:white;
+    color: white;
     justify-content: center;
     text-wrap: nowrap;
 }
-.compo{
+
+.compo {
     display: flex;
-    justify-content : center;
+    justify-content: center;
     font-size: 200%;
 }
-.roles{
+
+.roles {
     width: 60vh;
     max-width: max-content;
     border-radius: 10px;
     border: solid white 2px;
     justify-self: center;
 }
-.role_hover{
-    background-color: rgba(255,255,255,0.16);
+
+.role_hover {
+    background-color: rgba(255, 255, 255, 0.16);
     border-radius: 10px;
-    box-shadow: 0px 0px 30px 13px rgba(255,255,255,0.16);
+    box-shadow: 0px 0px 30px 13px rgba(255, 255, 255, 0.16);
 }
-#id_display{
+
+#id_display {
     display: flex;
     position: relative;
     flex-direction: row;
     margin-block: 2vh;
-    gap:2vw;
+    gap: 2vw;
     justify-content: center;
 }
-#trailer_frame{
+
+#trailer_frame {
     position: relative;
     justify-items: center;
     user-select: none;
     cursor: url('../cursors/pointer.png') 5 5, auto;
-    border: solid white 5px 
+    border: solid white 5px
 }
-#play_youtube{
+
+#play_youtube {
     position: absolute;
     width: 200px;
     height: auto;
     top: calc(210px - (200px / 2));
 }
-#id_display img:hover{
+
+#id_display img:hover {
     filter: brightness(50%);
     transition: 0.2s ease
 }
-#id_display img{
+
+#id_display img {
     transition: 0.2s ease-in-out
 }
 
@@ -219,69 +264,84 @@ footer a , footer li{
     font-size: 300%;
     transition: 0.2s ease-in-out;
 }
+
 .left_video:hover {
     color: gray;
     transform: translate(-5px);
     transition: 0.2s ease;
 }
+
 .right_video:hover {
     color: gray;
     transform: translate(5px);
     transition: 0.2s ease;
 }
 
-#id_display article:active{
+#id_display article:active {
     scale: 90%;
     transition: 0.2s ease;
 }
-.sounds{
+
+.sounds {
     margin-inline: 3vw;
 }
-.sounds iframe{
+
+.sounds iframe {
     border-radius: 5px;
     background-color: black;
 }
-.hero_scroll{
+
+.hero_scroll {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 150%;
     text-decoration: underline;
-    cursor: url('../cursors/pointer.png') , pointer;
+    cursor: url('../cursors/pointer.png'), pointer;
     transition: 0.1s ease-in;
 }
-#ram_scroll:hover{
+
+#ram_scroll:hover {
     color: rgb(235, 183, 255);
     transition: 0.2s ease-in
 }
-#genji_scroll:hover{
+
+#genji_scroll:hover {
     color: rgb(183, 255, 189);
     transition: 0.2s ease-in
 }
-.animate_hightlight_ram{
+
+.animate_hightlight_ram {
     animation: hightlight_ram 2.5s ease-in-out
 }
-.animate_hightlight_genji{
+
+.animate_hightlight_genji {
     animation: hightlight_genji 2.5s ease-in-out
 }
-.footer_left{
+
+.footer_left {
     justify-content: start;
     width: 33vw;
     height: max-content;
     font-size: 200%;
 }
-.footer_middle{
+
+.footer_middle {
     justify-content: center;
     width: 33vw;
     height: 200%;
-    
+    display: flex;
+    background-color: rgb(114, 110, 86);
+    border-radius: 10px;
 }
-.footer_right{
+
+.footer_right {
     justify-content: end;
     width: 33vw;
     height: max-content;
     display: flex;
 
 }
-.goUp{
+
+.goUp {
     justify-content: end;
     align-content: center;
     background-color: rgb(167, 167, 167);
@@ -292,45 +352,57 @@ footer a , footer li{
     height: 10vh;
     transition: 0.2s ease-in-out;
     margin-right: 2vw;
-
 }
-.goUp img{
+
+.goUp img {
     width: 3vw;
     transition: 0.2s ease-in-out;
 }
 
-.goUp:hover{
+.goUp:hover {
     background-color: rgb(92, 92, 92);
     border: solid rgb(167, 167, 167) 3px;
     transition: 0.2s ease-in-out;
 }
-.goUp:hover img{
+
+.goUp:hover img {
     transform: translateY(-5px);
     transition: 0.2s ease-in-out;
 }
-.jeu{
-    padding: 6%;
-    background-color: rgb(0, 8, 117);
+
+.jeu {
+    padding: 2%;
+    padding-top: -0px;
     color: white;
-    border: solid white 3px;
-    border-radius: 10px;
     user-select: none;
     text-decoration: none;
     font-size: 200%;
-    transition: 0.2s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
-.jeu:hover{
-    font-size: 250%;
-    padding: 5%;
-    color: bisque;
-    background-color: darkcyan;
-    transition: 0.3s ease-in-out;
+.jeu p {
+    cursor: url('../cursors/pointer.png') 5 5, auto;
 }
+.jeu img {
+    height: 2vw;
+    width: auto;
+    padding: 30px;
+    transition: 0.3s ease;
+    border-radius: 10%;    
+}
+.jeu.selected{
+    background-color: rgb(27,27,27);
+    border-radius: 10px;
+    border: solid white 2px;
+    transform:translateY(10);
+    transition: 0.2s ease-out
+}
+
 .footer_left a {
     text-decoration: none;
     color: white;
     transition: 0.2s ease-in-out;
 }
+
 .footer_left a:hover {
     color: rgb(70, 70, 70);
     transition: 0.2s ease-in-out;
